@@ -1,0 +1,57 @@
+    <header id="occ-header" class="{{ occ_toggle_class }}">
+      <img id="occ-avatar-img" src="{{ site.github.owner_gravatar_url }}" alt="">
+      <div id="occ-vcard-div">
+        <h1 id="occ-vcard-fullname">{{ site.octocopycat.vcard.fullname | default: site.github.owner.name | default: site.github.owner_name | escape }}</h1>
+  {%- if site.octocopycat.vcard.bio or site.github.owner.bio %}
+        <div id="occ-vcard-bio">{{ site.octocopycat.vcard.bio | default: site.github.owner.bio }}</div>
+  {%- endif %}
+        <ul id="occ-vcard-details">
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#vcard-github-icon' | relative_url }}"></use></svg>
+  {%- if site.github.is_user_page %}
+            <a href="{{ site.github.owner_url }}">@{{ site.github.owner_name | escape }}</a>
+  {%- else %}
+            <a href="{{ site.github.repository_url }}">{{ site.github.repository_nwo | escape }}</a>
+  {%- endif %}
+          </li>
+  {%- if site.octocopycat.vcard.company or site.github.owner.company %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#vcard-company-icon' | relative_url }}"></use></svg>
+            {{ site.octocopycat.vcard.company | default: site.github.owner.company | escape }}</li>
+  {%- endif %}
+  {%- if site.octocopycat.vcard.location or site.github.owner.location %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#vcard-location-icon' | relative_url }}"></use></svg>
+            {{ site.octocopycat.vcard.location | default: site.github.owner.location | escape }}</li>
+  {%- endif %}
+  {%- if site.octocopycat.vcard.show_email or site.octocopycat.vcard.email %}
+    {%- if site.octocopycat.vcard.email %}
+    {%- assign occ_vcard_email = site.octocopycat.vcard.email %}
+    {%- else %}
+    {%- assign occ_vcard_email = site.github.owner.email %}
+    {%- endif %}
+    {%- if occ_vcard_email %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#vcard-email-icon' | relative_url }}"></use></svg>
+            <a href="mailto:{{ occ_vcard_email | escape }}">{{ occ_vcard_email | escape }}</a></li>
+    {%- endif %}
+  {%- endif %}
+        </ul>
+      </div>
+    </header>
+
+    <script>
+(function() {
+  var occToggleDiv = document.getElementById("occ-toggle-div");
+  var occHeader = document.getElementById("occ-header");
+  occToggleDiv.addEventListener("click", function() {
+    if (this.classList.contains("occ-toggle-collapsed")) {
+      this.classList.remove("occ-toggle-collapsed");
+      this.classList.add("occ-toggle-expanded");
+      occHeader.classList.remove("occ-toggle-collapsed");
+      occHeader.classList.add("occ-toggle-expanded");
+    } else {
+      this.classList.remove("occ-toggle-expanded");
+      this.classList.add("occ-toggle-collapsed");
+      occHeader.classList.remove("occ-toggle-expanded");
+      occHeader.classList.add("occ-toggle-collapsed");
+    }
+  })
+})();
+    </script>

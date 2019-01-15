@@ -5,3 +5,243 @@
 @import "primer-layout/index.scss";
 @import "primer-markdown/index.scss";
 @import "rouge";
+
+#occ-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #24292e;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 0 12px 16px;
+  width: 100%;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#occ-nav a {
+  color: #fff;
+}
+
+#occ-nav a:hover {
+  color: hsla(0, 0%, 100%, .75);
+  text-decoration: none;
+}
+
+#occ-nav ul {
+  display: contents;
+  list-style: none;
+}
+
+#occ-nav div, #occ-nav li {
+  padding-right: 16px;
+}
+
+#occ-nav #occ-home-div {
+  padding-right: 13px;
+  padding-bottom: 4px;
+}
+
+#occ-home-img {
+  width: 32px;
+  height: 32px;
+}
+
+#occ-search-box {
+  width: 300px;
+  min-height: 30px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #fff;
+  background-color: hsla(0, 0%, 100%, .125);
+  border: none;
+  border-radius: 3px;
+  padding: 0 8px;
+}
+
+.occ-truncate {
+  display: inline-block;
+  max-width: 125px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.occ-icon-svg {
+  display: block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+#occ-vcard-fullname {
+  display: block;
+}
+
+#occ-vcard-details {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+#occ-vcard-details .occ-truncate {
+  max-width: 100%;
+  width: 100%;
+}
+
+#occ-vcard-details li {
+  padding-left: 22px;
+}
+
+#occ-vcard-details .occ-icon-svg {
+  color: #6a737d;
+  float: left;
+  margin-left: -22px;
+  margin-top: 3px;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+}
+
+/* Customize color and decoration of anchorjs links */
+a.anchorjs-link {
+  color: inherit;
+}
+
+a.anchorjs-link:hover {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 480px), not screen {
+  /* Styles for Desktop site */
+
+  body {
+    min-width: 1012px;
+    word-wrap: break-word;
+  }
+
+  #occ-toggle-div {
+    /* Hide toggle on desktop, meant for mobile. */
+    display: none;
+  }
+
+  #occ-container {
+    max-width: 1012px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 16px;
+    margin-top: 24px;
+  }
+
+  #occ-header {
+    width: 25%;
+    float: left;
+    padding-right: 16px;
+  }
+
+  #occ-avatar-img {
+    width: 230px;
+    height: 230px;
+    display: block;
+    border-radius: 6px;
+  }
+
+  #occ-vcard-fullname {
+    font-size: 26px;
+    line-height: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  #occ-vcard-bio {
+    margin-bottom: 16px;
+  }
+
+  #occ-vcard-details li {
+    padding-top: 4px;
+  }
+
+  #occ-main {
+    width: 75%;
+    float: left;
+    padding-left: 8px;
+    padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  /* Styles for Mobile site */
+
+  #occ-home-div, #occ-search-div {
+    /* Hide home and search box on mobile, meant for desktop. */
+    display: none;
+  }
+
+  #occ-toggle-arrow-img, #occ-toggle-avatar-img {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  #occ-toggle-avatar-img {
+    border-radius: 3px;
+  }
+
+  .occ-toggle-expanded #occ-toggle-avatar-img {
+    display: none;
+  }
+
+  .occ-toggle-collapsed #occ-toggle-arrow-img {
+    display: none;
+  }
+
+  #occ-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px 15px 10px 15px;
+    background-color: #fafbfc;
+  }
+
+  #occ-header.occ-toggle-collapsed {
+    display: none;
+  }
+
+  #occ-avatar-img {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 110px;
+    display: block;
+    margin-right: 15px;
+    border-radius: 3px;
+  }
+
+  #occ-vcard-div {
+    flex: 0 0 auto;
+    line-height: 1.5;
+    overflow: visible;
+  }
+
+  #occ-vcard-fullname {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  #occ-vcard-details {
+    margin: 7.5px 0 0;
+    padding: 0;
+  }
+
+  #occ-vcard-details li {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 0;
+  }
+
+  #occ-main {
+    background-color: #fff;
+    border-top: 1px solid #e1e4e8;
+    padding: 16px;
+  }
+}

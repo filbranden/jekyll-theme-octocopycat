@@ -1,0 +1,26 @@
+  <nav id="occ-nav">
+    <div id="occ-home-div">
+      <a href="/"><svg id="occ-home-img" class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#nav-home-icon' | relative_url }}"></use></svg></a>
+    </div>
+    <div id="occ-search-div">
+      <form action="https://www.google.com/search" method="get">
+	<input type="hidden" name="q" value="site:{{ site.github.repository_name | escape }}">
+	<input id="occ-search-box" type="text" name="q" placeholder="Search..." required>
+      </form>
+    </div>
+  {%- assign occ_toggle_class = "occ-toggle-collapsed" %}
+  {%- if layout.octocopycat.toggle_header == "expanded" or page.octocopycat.toggle_header == "expanded" %}
+  {%- assign occ_toggle_class = "occ-toggle-expanded" %}
+  {%- endif %}
+    <div id="occ-toggle-div" class="{{ occ_toggle_class }}">
+      <svg id="occ-toggle-arrow-img" class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#nav-arrow-icon' | relative_url }}"></use></svg>
+      <img id="occ-toggle-avatar-img" src="{{ site.github.owner_gravatar_url }}" alt="">
+    </div>
+  {%- if site.octocopycat.sitemap %}
+    <ul>
+    {%- for p in site.octocopycat.sitemap %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></li>
+    {%- endfor %}
+    </ul>
+  {%- endif %}
+  </nav>
