@@ -3,6 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+{%- if site.octocopycat.favicon32 %}
+  <link rel="icon" type="image/png" href="{{ site.octocopycat.favicon32 | relative_url }}" sizes="32x32">
+{%- endif %}
+{%- if site.octocopycat.favicon16 %}
+  <link rel="icon" type="image/png" href="{{ site.octocopycat.favicon16 | relative_url }}" sizes="16x16">
+{%- endif %}
+{%- if site.octocopycat.favicon192 %}
+  <link rel="icon" type="image/png" href="{{ site.octocopycat.favicon192 | relative_url }}" sizes="192x192">
+{%- endif %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
