@@ -32,6 +32,26 @@
             <a href="mailto:{{ occ_vcard_email | escape }}">{{ occ_vcard_email | escape }}</a></li>
     {%- endif %}
   {%- endif %}
+  {%- if site.octocopycat.social_links.linkedin %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#social-linkedin' | relative_url }}"></use></svg>
+            <a href="https://www.linkedin.com/in/{{ site.octocopycat.social_links.linkedin | cgi_escape | escape }}">{{ site.octocopycat.social_links.linkedin | escape }}</a></li>
+  {%- endif %}
+  {%- if site.octocopycat.social_links.stackexchange_url %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#social-stackexchange' | relative_url }}"></use></svg>
+            <a href="{{ site.octocopycat.social_links.stackexchange_url | escape }}">{{ site.octocopycat.social_links.stackexchange_url | split: "/" | last | escape }}</a></li>
+  {%- endif %}
+  {%- if site.octocopycat.social_links.twitter %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#social-twitter' | relative_url }}"></use></svg>
+            <a href="https://twitter.com/{{ site.octocopycat.social_links.twitter | cgi_escape | escape }}">{{ site.octocopycat.social_links.twitter | escape }}</a></li>
+  {%- endif %}
+  {%- if site.octocopycat.social_links.facebook %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#social-facebook' | relative_url }}"></use></svg>
+            <a href="https://www.facebook.com/{{ site.octocopycat.social_links.facebook | cgi_escape | escape }}">{{ site.octocopycat.social_links.facebook | escape }}</a></li>
+  {%- endif %}
+  {%- if site.octocopycat.social_links.youtube %}
+          <li class="occ-truncate"><svg class="occ-icon-svg"><use xlink:href="{{ '/assets/img/octocopycat-icons.svg#social-youtube' | relative_url }}"></use></svg>
+            <a href="https://www.youtube.com/{{ site.octocopycat.social_links.youtube | cgi_escape | escape }}">{{ site.octocopycat.social_links.youtube | escape }}</a></li>
+  {%- endif %}
         </ul>
       </div>
     </header>
